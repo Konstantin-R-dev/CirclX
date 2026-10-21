@@ -3,17 +3,17 @@ import tkinter as tk
 import keyboard
 import pyautogui
 
-menu_open = False
+menue_open = False
 window = None
 
 
-def open_menu():
-  global menu_open, window
-  if menu_open:
+def open_menue():
+  global menue_open, window
+  if menue_open:
     return
 
   x, y = pyautogui.position()
-  menu_open = True
+  menue_open = True
 
   window = tk.Tk()
   window.overrideredirect(True)
@@ -44,8 +44,8 @@ def open_menu():
       cx, cy, text="X", fill="white", font=("Arial", 10, "bold")
   )
 
-  canvas.tag_bind(close_circle, "<Button-1>", lambda e: close_menu())
-  canvas.tag_bind(close_text, "<Button-1>", lambda e: close_menu())
+  canvas.tag_bind(close_circle, "<Button-1>", lambda e: close_menue())
+  canvas.tag_bind(close_text, "<Button-1>", lambda e: close_menue())
 
   actions = ["Copy", "Paste", "CMD", "Explorer", "Screen"]
   num_items = len(actions)
@@ -69,16 +69,16 @@ def open_menu():
   window.mainloop()
 
 
-def close_menu():
+def close_menue():
   global menu_open, window
   if window:
     window.destroy()
     window = None
-  menu_open = False
+  menue_open = False
 
 
-def toggle_menu():
+def toggle_menue():
   if not menu_open:
-    open_menu()
+    open_menue()
   else:
-    close_menu()
+    close_menue()
