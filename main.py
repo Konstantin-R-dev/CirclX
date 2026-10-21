@@ -4,7 +4,7 @@
 
 #Starting hotkey.py File
 import keyboard
-from core.hotkey import toggle_menu
+from core.hotkey import toggle_menue
 
-keyboard.add_hotkey("ctrl+alt+m", toggle_menu)
+keyboard.add_hotkey("ctrl+alt+m", toggle_menue)
 keyboard.wait()
